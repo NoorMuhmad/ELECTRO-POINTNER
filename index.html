@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektro Pointner | Elektroinstallationen & Photovoltaik Traun</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            dark: '#0f172a',
+                        },
+                        amberAccent: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-slate-50 selection:bg-brand-600 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-dark text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-amberAccent-500"></i> Aumühlstraße 13, 4050 Traun</span>
+                <span class="hidden md:inline flex items-center gap-1.5"><i class="fa-solid fa-clock text-amberAccent-500"></i> Mo–Fr: Termin nach Vereinbarung</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+4369918000097" class="hover:text-amberAccent-400 transition-colors flex items-center gap-1.5 font-medium text-white">
+                    <i class="fa-solid fa-phone text-amberAccent-500"></i> +43 699 18000097
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="mailto:office@elektro-pointner.at" class="hover:text-amberAccent-400 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-amberAccent-500"></i> office@elektro-pointner.at
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-900 via-brand-700 to-amberAccent-500 flex items-center justify-center text-white shadow-lg shadow-brand-900/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-bolt text-xl text-amberAccent-400"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-brand-dark block leading-tight">ELEKTRO <span class="text-brand-600">POINTNER</span></span>
+                    <span class="text-xs text-slate-500 font-medium tracking-wider uppercase block">Meisterbetrieb Traun</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                <a href="#services" class="hover:text-brand-600 transition-colors">Leistungen</a>
+                <a href="#about" class="hover:text-brand-600 transition-colors">Über uns</a>
+                <a href="#why-us" class="hover:text-brand-600 transition-colors">Vorteile</a>
+                <a href="#reviews" class="hover:text-brand-600 transition-colors">Bewertungen</a>
+                <a href="#contact" class="hover:text-brand-600 transition-colors">Kontakt</a>
+            </nav>
+
+            <!-- Call CTA Button & Mobile Menu Button -->
+            <div class="flex items-center gap-3">
+                <a href="tel:+4369918000097" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-amberAccent-500 to-amberAccent-600 hover:from-amberAccent-600 hover:to-amberAccent-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-sm">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>Jetzt anrufen</span>
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none" aria-label="Menü öffnen">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="block py-2 text-slate-700 hover:text-brand-600 font-medium border-b border-slate-100">Leistungen</a>
+            <a href="#about" class="block py-2 text-slate-700 hover:text-brand-600 font-medium border-b border-slate-100">Über uns</a>
+            <a href="#why-us" class="block py-2 text-slate-700 hover:text-brand-600 font-medium border-b border-slate-100">Vorteile</a>
+            <a href="#reviews" class="block py-2 text-slate-700 hover:text-brand-600 font-medium border-b border-slate-100">Bewertungen</a>
+            <a href="#contact" class="block py-2 text-slate-700 hover:text-brand-600 font-medium">Kontakt</a>
+            <div class="pt-2">
+                <a href="tel:+4369918000097" class="w-full flex justify-center items-center gap-2 bg-amberAccent-500 text-slate-950 font-bold px-4 py-3 rounded-xl shadow-md">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+43 699 18000097</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Rating Badge -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm font-semibold shadow-sm">
+                        <div class="flex text-amber-500 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span>5.0 Google Bewertung</span>
+                        <span class="text-slate-400">•</span>
+                        <span class="text-slate-600">Traun & Linz-Land</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight leading-tight">
+                        Ihr meisterhafter Elektrotechniker in <span class="gradient-text">Traun & Umgebung</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Von modernsten Photovoltaikanlagen über intelligente Gebäudeautomation bis hin zur kompletten Hausinstallation – Elektro Pointner liefert nachhaltige Qualität aus einer Hand seit 2004.
+                    </p>
+
+                    <!-- Hero Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-900 hover:bg-brand-800 text-white font-bold px-7 py-4 rounded-xl shadow-lg shadow-brand-900/25 hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-regular fa-calendar-check text-amberAccent-400"></i>
+                            <span>Termin vereinbaren</span>
+                        </a>
+                        <a href="tel:+4369918000097" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-slate-900 font-bold px-7 py-4 rounded-xl shadow-md border border-slate-200 hover:border-slate-300 transition-all">
+                            <i class="fa-solid fa-phone text-brand-600"></i>
+                            <span>+43 699 18000097</span>
+                        </a>
+                    </div>
+
+                    <!-- Key Trust Indicators -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/80 text-left max-w-lg mx-auto lg:mx-0">
+                        <div class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                            <span class="text-xs sm:text-sm font-semibold text-slate-700">Meisterbetrieb seit 2004</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                            <span class="text-xs sm:text-sm font-semibold text-slate-700">100% Verlässlich</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
+                            <span class="text-xs sm:text-sm font-semibold text-slate-700">Lokaler Service</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Image Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative background glow -->
+                        <div class="absolute -inset-4 bg-gradient-to-r from-brand-600 to-amberAccent-500 rounded-3xl opacity-20 blur-2xl"></div>
+                        
+                        <!-- Main Frame -->
+                        <div class="relative bg-white p-3 rounded-3xl shadow-2xl border border-slate-200/60">
+                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Elektro Pointner Photovoltaik und Elektroinstallationen Traun" 
+                                 class="rounded-2xl object-cover h-[380px] sm:h-[450px] w-full"
+                                 onerror="this.src='https://placehold.co/800x600/1e3a8a/ffffff?text=Elektro+Pointner+Traun'">
+                            
+                            <!-- Floating Card Overlay -->
+                            <div class="absolute -bottom-6 -left-4 sm:-left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4">
+                                <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl">
+                                    <i class="fa-solid fa-solar-panel"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 font-medium">PV-Experte</p>
+                                    <p class="text-sm font-bold text-slate-900">Saubere Sonnenenergie</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid (Leistungen) -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-brand-600 uppercase bg-brand-50 px-3.5 py-1.5 rounded-full border border-brand-100">Unsere Fachgebiete</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-4 tracking-tight">Umfassende Elektro-Leistungen aus Meisterhand</h2>
+                <p class="text-slate-600 mt-3 text-base sm:text-lg">Wir unterstützen Sie von der präzisen Planung bis zur perfekten Ausführung bei Neubau, Sanierung und Gewerbeprojekten.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Photovoltaik -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:border-brand-600/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-400 flex items-center justify-center text-slate-950 text-2xl mb-6 shadow-md shadow-amber-500/20 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-solar-panel"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Photovoltaikanlagen</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Planung, Montage und Inbetriebnahme hocheffizienter Solaranlagen und Stromspeicher für volle Energieunabhängigkeit in Traun & Linz-Land.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-semibold text-slate-700 pt-4 border-t border-slate-200">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Eigenstromnutzung maximieren</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Beratung & Förderabwicklung</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Elektroinstallationen -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:border-brand-600/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-900 to-brand-700 flex items-center justify-center text-amberAccent-400 text-2xl mb-6 shadow-md shadow-brand-900/20 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-plug"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Elektroinstallationen & Sanierung</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Von der Steckdose bis zur kompletten Hausverkabelung. Fachgerechte Ausführung für Wohnbau, Gewerbe und Landwirtschaft.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-semibold text-slate-700 pt-4 border-t border-slate-200">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Neu- & Altbausanierung</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Verteilerbau & Zähleranlagen</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Gebäudeautomation -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:border-brand-600/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white text-2xl mb-6 shadow-md shadow-blue-600/20 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-house-signal"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Gebäudeautomation & Smart Home</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Intelligente Vernetzung von Beleuchtung, Heizung und Beschattung für höchsten Komfort und maximale Energieeffizienz.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-semibold text-slate-700 pt-4 border-t border-slate-200">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> App- & Sprachsteuerung</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Effiziente Energiesteuerung</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Alarmanlagen & Netzwerktechnik -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:border-brand-600/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-600 flex items-center justify-center text-white text-2xl mb-6 shadow-md shadow-emerald-600/20 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Alarmanlagen & Netzwerk</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Sicherheitssysteme, Videoverkabelung und strukturierte Netzwerklösungen für schnelle und stabile Kommunikation im Objekt.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-semibold text-slate-700 pt-4 border-t border-slate-200">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Einbruchschutz & Video</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> EDV- & LAN-Verkabelung</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5: E-Überprüfung & Reparatur -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:border-brand-600/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white text-2xl mb-6 shadow-md shadow-purple-600/20 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">E-Befunde & Reparaturservice</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Normgerechte Sicherheitsprüfungen (E-Check), Mängelbehebung sowie professioneller Reparaturservice für Kleingeräte & Leuchten.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-semibold text-slate-700 pt-4 border-t border-slate-200">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Prüfbefunde nach ÖVE</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Nachhaltige Reparatur</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6: Elektromaterial & Zubehör -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:border-brand-600/40 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-rose-500 to-amber-500 flex items-center justify-center text-white text-2xl mb-6 shadow-md shadow-rose-500/20 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Lichttechnik & Materialverkauf</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Umfangreiches Lager an Kabeln als Meterware, Spezial-Leuchtmitteln (LED, Halogen), Schaltern und hochwertigem Haushaltszubehör.</p>
+                    </div>
+                    <ul class="space-y-2 text-xs font-semibold text-slate-700 pt-4 border-t border-slate-200">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Kabel & Zubehör ab Lager</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Beratung im Fachgeschäft</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Value Proposition Section -->
+    <section id="about" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Subtle Glow Effect -->
+        <div class="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-amberAccent-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Image & Badges -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Elektro Pointner Team Elektro-Fachbetrieb Traun" 
+                             class="rounded-3xl shadow-2xl border border-slate-800 object-cover w-full h-[400px]"
+                             onerror="this.src='https://placehold.co/800x600/0f172a/ffffff?text=Elektro+Pointner+Qualitaet'">
+                        
+                        <div class="absolute -bottom-6 -right-4 sm:right-6 bg-amberAccent-500 text-slate-950 p-5 rounded-2xl shadow-xl font-bold">
+                            <span class="text-3xl block font-black">Seit 2004</span>
+                            <span class="text-xs uppercase tracking-wider font-extrabold">Qualität aus Traun</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Text Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-bold tracking-widest text-amberAccent-400 uppercase bg-slate-800/80 px-3.5 py-1.5 rounded-full border border-slate-700">Erfahrung & Verlässlichkeit</span>
+                    
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Ihr verlässlicher Elektro-Partner aus Traun</h2>
+                    
+                    <p class="text-slate-300 leading-relaxed">
+                        Das Ziel von ELEKTRO-Pointner ist es seit der Unternehmensgründung im Jahr 2004, Kunden durch erstklassige, ehrliche und nachhaltige Handwerksarbeit zu begeistern. Unser bestens ausgebildetes Fachteam betreut sowohl Privat- als auch Gewerbekunden in der gesamten Region Linz-Land.
+                    </p>
+
+                    <p class="text-slate-300 leading-relaxed">
+                        Sie profitieren von persönlicher Betreuung von A bis Z: Von der verständlichen Erstberatung und kollaborativen Planung bis hin zur präzisen Montage und späteren Wartung.
+                    </p>
+
+                    <!-- Feature Checkmarks Grid -->
+                    <div id="why-us" class="grid sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 bg-slate-800/60 p-4 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-award text-amberAccent-400 text-xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Alles aus einer Hand</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Planung, Ausführung & Service ohne Zwischenhändler.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 bg-slate-800/60 p-4 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-user-shield text-amberAccent-400 text-xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Ehrliche Beratung</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Transparente Angebote und faire Preise.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 bg-slate-800/60 p-4 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-bolt-lightning text-amberAccent-400 text-xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Regionale Nähe</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Schnelle Reaktionszeiten in Traun & Linz-Land.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 bg-slate-800/60 p-4 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-screwdriver-wrench text-amberAccent-400 text-xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Reparatur-Service</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Reparieren statt Wegwerfen – nachhaltig & günstig.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Google Reviews Section -->
+    <section id="reviews" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-brand-600 uppercase bg-brand-50 px-3.5 py-1.5 rounded-full border border-brand-100">Kundenstimmen</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-4 tracking-tight">Das sagen unsere zufriedenen Kunden</h2>
+                <div class="flex items-center justify-center gap-2 mt-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo" class="w-5 h-5">
+                    <span class="font-bold text-slate-800">5.0 / 5.0 Sterne</span>
+                    <span class="text-slate-400">•</span>
+                    <span class="text-slate-600 text-sm">Ausgezeichnet auf Google Maps</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-slate-200 text-4xl"></i>
+                    <div>
+                        <div class="flex text-amber-500 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium text-base sm:text-lg italic leading-relaxed">
+                            "Best PV-Electrician ever!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">günther steinboeck</p>
+                            <p class="text-xs text-slate-500">Google Rezension</p>
+                        </div>
+                        <span class="text-xs text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md font-semibold border border-emerald-100">Verifizierter Kunde</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-slate-200 text-4xl"></i>
+                    <div>
+                        <div class="flex text-amber-500 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 font-medium text-base sm:text-lg italic leading-relaxed">
+                            "Very well looked after." / "Sehr gut betreut worden."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Fără Nume</p>
+                            <p class="text-xs text-slate-500">Local Guide (787 Bewertungen)</p>
+                        </div>
+                        <span class="text-xs text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md font-semibold border border-emerald-100">Verifizierter Kunde</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Direct Contact Info -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-brand-600 uppercase bg-brand-50 px-3.5 py-1.5 rounded-full border border-brand-100">Direktkontakt</span>
+                        <h2 class="text-3xl font-extrabold text-brand-dark mt-4 tracking-tight">Treten Sie mit uns in Kontakt</h2>
+                        <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                            Termine finden nach telefonischer Vereinbarung statt. Rufen Sie uns an oder senden Sie uns eine Nachricht!
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Phone Card -->
+                        <a href="tel:+4369918000097" class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-600 hover:shadow-md transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-brand-900 text-amberAccent-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Mobil / WhatsApp</p>
+                                <p class="text-base font-bold text-slate-900 group-hover:text-brand-600 transition-colors">+43 699 18000097</p>
+                                <p class="text-xs text-slate-500 mt-0.5">Festnetz: +43 7229 90924</p>
+                            </div>
+                        </a>
+
+                        <!-- Email Card -->
+                        <a href="mailto:office@elektro-pointner.at" class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-600 hover:shadow-md transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-amberAccent-500 text-slate-950 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">E-Mail</p>
+                                <p class="text-base font-bold text-slate-900 group-hover:text-brand-600 transition-colors">office@elektro-pointner.at</p>
+                                <p class="text-xs text-slate-500 mt-0.5">Schnelle Antwort garantiert</p>
+                            </div>
+                        </a>
+
+                        <!-- Address Card -->
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-white flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Standort</p>
+                                <p class="text-base font-bold text-slate-900">Elektro Pointner</p>
+                                <p class="text-xs text-slate-600">Aumühlstraße 13, A-4050 Traun</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Preview Card -->
+                    <div class="bg-slate-100 p-4 rounded-2xl border border-slate-200 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-map-location-dot text-brand-600 text-2xl"></i>
+                            <div>
+                                <p class="text-xs font-bold text-slate-900">Anfahrt planen</p>
+                                <p class="text-xs text-slate-500">Aumühlstraße 13, 4050 Traun</p>
+                            </div>
+                        </div>
+                        <a href="https://maps.google.com/?q=Aumuehlstrasse+13,+4050+Traun" target="_blank" class="px-3.5 py-2 bg-white text-brand-600 hover:bg-brand-50 rounded-xl text-xs font-bold border border-slate-200 transition-colors">
+                            Auf Karte öffnen
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Contact / Lead Form -->
+                <div class="lg:col-span-7 bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-lg">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-2">Unverbindliche Anfrage senden</h3>
+                    <p class="text-sm text-slate-600 mb-6">Beschreiben Sie Ihr Anliegen. Wir rufen Sie gerne für ein Beratungsgespräch zurück.</p>
+
+                    <form id="contact-form" onsubmit="event.preventDefault(); handleFormSubmit();" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Vollständiger Name *</label>
+                                <input type="text" id="name" required placeholder="z.B. Max Mustermann" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-all text-sm">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Telefonnummer *</label>
+                                <input type="tel" id="phone" required placeholder="+43 660 ..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-all text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">E-Mail Adresse *</label>
+                            <input type="email" id="email" required placeholder="name@beispiel.at" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-all text-sm">
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Gewünschte Leistung</label>
+                            <select id="service" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-all text-sm bg-white">
+                                <option>Photovoltaik & Speicher</option>
+                                <option>Elektroinstallation / Sanierung</option>
+                                <option>Gebäudeautomation / Smart Home</option>
+                                <option>Alarmanlage & Netzwerk</option>
+                                <option>E-Überprüfung / Befund</option>
+                                <option>Reparatur & Sonstiges</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Ihre Nachricht / Projektbeschriebung</label>
+                            <textarea id="message" rows="4" placeholder="Wie können wir Ihnen helfen?" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-all text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-900 to-brand-700 hover:from-brand-800 hover:to-brand-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-brand-900/20 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-amberAccent-400"></i>
+                            <span>Anfrage jetzt absenden</span>
+                        </button>
+                    </form>
+
+                    <!-- Success Message Container -->
+                    <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-medium flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-xl"></i>
+                        <span>Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns umgehend bei Ihnen.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-slate-400 py-12 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-amberAccent-500 flex items-center justify-center text-slate-950 font-bold">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="text-lg font-extrabold text-white">ELEKTRO POINTNER</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Ihr kompetenter Meisterbetrieb für Elektroinstallationen, Photovoltaik und Gebäudeautomation in Traun und Linz-Land.
+                    </p>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-sm">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="hover:text-amberAccent-400 transition-colors">Leistungen</a></li>
+                        <li><a href="#about" class="hover:text-amberAccent-400 transition-colors">Über uns</a></li>
+                        <li><a href="#why-us" class="hover:text-amberAccent-400 transition-colors">Vorteile</a></li>
+                        <li><a href="#reviews" class="hover:text-amberAccent-400 transition-colors">Bewertungen</a></li>
+                        <li><a href="#contact" class="hover:text-amberAccent-400 transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legal & Notice -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-sm">Terminvereinbarung</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Termine nach telefonischer Vereinbarung unter <a href="tel:+4369918000097" class="text-amberAccent-400 font-semibold">+43 699 18000097</a> oder per E-Mail.
+                    </p>
+                </div>
+
+                <!-- Col 4: Contact & Social -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-sm">Kontakt</h4>
+                    <p class="text-xs text-slate-400">Aumühlstraße 13</p>
+                    <p class="text-xs text-slate-400">A-4050 Traun, Österreich</p>
+                    <p class="text-xs text-slate-400 mt-2">office@elektro-pointner.at</p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Elektro Pointner. Alle Rechte vorbehalten.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-400">Impressum</a>
+                    <a href="#" class="hover:text-slate-400">Datenschutz</a>
+                    <a href="#" class="hover:text-slate-400">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for interactivity -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact Form Submission Handler
+        function handleFormSubmit() {
+            const successBox = document.getElementById('form-success');
+            const form = document.getElementById('contact-form');
+            
+            successBox.classList.remove('hidden');
+            form.reset();
+            
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
